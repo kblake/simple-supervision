@@ -1,6 +1,6 @@
 # Math
 
-Simple demonstration of supervision by setting up a `Math.Calculate` module that has a method divide. If a divide by zero occurs then the process gets restarted.
+Simple demonstration of supervision by setting up a `Math.Calculate` module that has a method `divide`. If a divide by zero occurs then the process gets restarted.
 
 In `mix.exs`, the `Math` supervisor gets kicked off via:
 
@@ -13,7 +13,7 @@ In `mix.exs`, the `Math` supervisor gets kicked off via:
 ```
 
 In the Math supervisor, it kicks off and supervises the `Math.Calculate` worker process.
-Thus, when you fire up `iex -S mix` it'll start up the Math supervisor and the worker process for you!
+Thus, when you fire up `iex -S mix` it'll start up the `Math` supervisor and the `Math.Calculte` worker process for you!
 
 So then I can call the `divide` function:
 
