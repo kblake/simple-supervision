@@ -16,8 +16,7 @@ defmodule Math.Calculate do
   end
 
   def handle_call({:divide, num1, num2}, _from, :ok) do
-    answer = num1/num2
-    IO.puts answer
-    {:reply, :ok, answer}
+    IO.puts num1/num2
+    {:reply, :ok, :ok}
   end
 end
