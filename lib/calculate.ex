@@ -7,10 +7,6 @@ defmodule Math.Calculate do
     GenServer.start_link(@name, :ok, name: @name)
   end
 
-  def init(:ok) do
-    {:ok, :ok}
-  end
-
   def divide(num1, num2) do
     GenServer.call(@name, {:divide, num1, num2})
   end
