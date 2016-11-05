@@ -35,3 +35,5 @@ A BIG UGLY ERROR MESSAGE... BUT LITTLE DID YOU KNOW THE PROCESS WAS RESTARTED AN
 
 ```
 
+![alt tag](https://github.com/kblake/simple-supervision/blob/master/dividebyzerosupervision.gif)
+
