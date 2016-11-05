@@ -13,7 +13,7 @@ In `mix.exs`, the `Math` supervisor gets kicked off via:
 ```
 
 In the Math supervisor, it kicks off and supervises the `Math.Calculate` worker process.
-Thus, when you fire up `iex -S mix` it'll start up the `Math` supervisor and the `Math.Calculte` worker process for you!
+Thus, when you fire up `iex -S mix` it'll start up the `Math` supervisor and the `Math.Calculate` worker process for you!
 
 So then I can call the `divide` function:
 
