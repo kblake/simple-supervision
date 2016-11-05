@@ -1,24 +1,37 @@
 # Math
 
-**TODO: Add description**
+Simple demonstration of supervision by setting up a `Math.Calculate` module that has a method `divide`. If a divide by zero occurs then the process gets restarted.
 
-## Installation
+In `mix.exs`, the `Math` supervisor gets kicked off via:
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed as:
+```
+  def application do
+    [applications: [:logger],
+     mod: {Math, []}
+    ]
+  end
+```
 
-  1. Add `math` to your list of dependencies in `mix.exs`:
+In the Math supervisor, it kicks off and supervises the `Math.Calculate` worker process.
+Thus, when you fire up `iex -S mix` it'll start up the `Math` supervisor and the `Math.Calculate` worker process for you!
 
-    ```elixir
-    def deps do
-      [{:math, "~> 0.1.0"}]
-    end
-    ```
+So then I can call the `divide` function:
 
-  2. Ensure `math` is started before your application:
+```
+> Math.Calculate.divide(10,2)
+5.0
+:ok
 
-    ```elixir
-    def application do
-      [applications: [:math]]
-    end
-    ```
+> Math.Calculate.divide(34,3)
+11.333333333333334
+:ok
+
+> Math.Calculate.divide(34,0)
+A BIG UGLY ERROR MESSAGE... BUT LITTLE DID YOU KNOW THE PROCESS WAS RESTARTED AND LIVES!
+
+> Math.Calculate.divide(34,2)
+17.0
+:OK
+
+```
 
